@@ -8,8 +8,8 @@ from email.mime.text import MIMEText
 sender_address = 'marufemre99@gmail.com'
 sender_pass = 'dzkmypyatuduzrgx'
 
-app = Flask(__name__)
-@app.route('/mail', methods=['GET', 'POST'])
+MyApp = Flask(__name__)
+@MyApp.route('/mail', methods=['GET', 'POST'])
 def welcome():
     if request.method == 'POST':
         mail_content = "Email adress: " + request.json["address"] +  "\nName: " + request.json["name"] + "\n\n" + request.json["content"]
@@ -27,4 +27,4 @@ def welcome():
         session.quit()
         return "ok"
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=9999)
+    MyApp.run(host='0.0.0.0', port=9999)
