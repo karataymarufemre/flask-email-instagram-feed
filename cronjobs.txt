@@ -1,0 +1,4 @@
+# every 2 hour run instagram
+0 */2 * * * curl --request GET 'http://localhost:9999/instagram_batch'
+# get new access token At 03:30 on day-of-month 1 and 15.
+30 3 1,15 * * curl --request GET 'http://localhost:9999/new_access_token'
